@@ -292,7 +292,8 @@
 <body class="" style="visibility: hidden;">
 
 <section id="top_sect" class="second">
-    <button id="text_btn" onclick="DemoApp.sendText('/ping');">Send «/ping»</button>
+    <button id="regular_btn" onclick="DemoApp.sendText('#regular_field');">Send text from #regular_field</button>
+    <button id="text_btn" onclick="DemoApp.sendText('#text_field');">Send text from #text_field</button>
     <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
     <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
@@ -515,8 +516,8 @@
                 });
             }
         },
-        sendText(spam) {
-            const textField = document.querySelector('#text_field');
+        sendText(fld = '#text_field', spam = false) {
+            const textField = document.querySelector(fld);
             const text = textField.value;
             if (!text.length) {
                 return textField.focus();
@@ -530,7 +531,7 @@
                 Telegram.WebApp.sendData(text);
             }
         },
-        sendTime(spam) {
+        sendTime(spam = false) {
             const repeat = spam ? 10 : 1;
             for (let i = 0; i < repeat; i++) {
                 Telegram.WebApp.sendData(new Date().toString());
