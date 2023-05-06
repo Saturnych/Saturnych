@@ -53,6 +53,7 @@
 
 <script>
    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
+   alert(tg.initData);
 
    tg.expand(); //расширяем на все окно
 
@@ -78,7 +79,7 @@
 
    let userData = document.createElement('p'); //создаем еще параграф
    userData.classList.add('hint');
-   userData.innerText = Date.now(); 
+   userData.innerText = Date.now();
    usercard.appendChild(userData); //добавляем
 
    let btn = document.getElementById('btn'); //получаем кнопку скрыть/показать
@@ -90,6 +91,7 @@
       else{ //иначе
          tg.MainButton.show() //показываем
       }
+      alert(tg.MainButton);
    });
 
    let btnED = document.getElementById('btnED'); //получаем кнопку активировать/деактивировать
@@ -104,11 +106,11 @@
       }
    });
 
-   //tg.onEvent('mainButtonClicked', function(){
-      //tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
+   tg.onEvent('mainButtonClicked', function(){
+      tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
       //tg.sendData("some string that we need to send");
       //при клике на основную кнопку отправляем данные в строковом виде
-   //});
+   });
 
    tg.MainButton.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
      tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
