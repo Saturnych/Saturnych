@@ -78,7 +78,7 @@
 
    let userData = document.createElement('p'); //создаем еще параграф
    userData.classList.add('hint');
-   //userData.innerText = JSON.stringify(tg.initDataUnsafe); // tg.initDataUnsafe
+   userData.innerText = Date.now(); 
    usercard.appendChild(userData); //добавляем
 
    let btn = document.getElementById('btn'); //получаем кнопку скрыть/показать
