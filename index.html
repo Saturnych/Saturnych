@@ -77,7 +77,7 @@
    userId.innerText = tg.initDataUnsafe.user.id; //показываем userId
    usercard.appendChild(userId); //добавляем
 
-   let userData = document.createElement('p').addClass('hint'); //создаем еще параграф
+   let userData = document.createElement('p').classList.add('hint'); //создаем еще параграф
    userData.innerText = JSON.stringify(tg.initDataUnsafe.user); // tg.initDataUnsafe
    usercard.appendChild(userData); //добавляем
 
