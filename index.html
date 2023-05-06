@@ -107,15 +107,9 @@
    });
 
    tg.MainButton.onClick(() => {
-     // tg.sendData('/ping');
      alert('tg.MainButton.onClick()');
+     tg.sendData('/ping');
    });
-
-   //Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      //tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
-      //tg.sendData("some string that we need to send");
-      //при клике на основную кнопку отправляем данные в строковом виде
-   //});
 
    //работает только в attachment menu
    //let pic = document.createElement('img'); //создаем img
