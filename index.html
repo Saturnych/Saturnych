@@ -108,6 +108,7 @@
 
    tg.MainButton.onClick(() => {
      alert('tg.MainButton.onClick()');
+     tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
      tg.sendData('/ping');
    });
 
