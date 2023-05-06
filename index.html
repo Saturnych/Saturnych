@@ -91,7 +91,7 @@
       else{ //иначе
          tg.MainButton.show() //показываем
       }
-      alert(tg.MainButton);
+
    });
 
    let btnED = document.getElementById('btnED'); //получаем кнопку активировать/деактивировать
@@ -113,9 +113,7 @@
    });
 
    tg.MainButton.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-     tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
-     tg.sendData("some string that we need to send");
-     //при клике на основную кнопку отправляем данные в строковом виде
+     alert(JSON.stringify(tg.MainButton));
    });
 
 
