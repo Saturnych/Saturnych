@@ -104,10 +104,16 @@
       }
    });
 
-   tg.onEvent('mainButtonClicked', function(){
-      tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
-      tg.sendData("some string that we need to send");
+   //tg.onEvent('mainButtonClicked', function(){
+      //tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
+      //tg.sendData("some string that we need to send");
       //при клике на основную кнопку отправляем данные в строковом виде
+   //});
+
+   tg.MainButton.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+     tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
+     tg.sendData("some string that we need to send");
+     //при клике на основную кнопку отправляем данные в строковом виде
    });
 
 
