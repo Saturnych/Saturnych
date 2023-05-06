@@ -106,19 +106,16 @@
       }
    });
 
-   tg.onEvent('mainButtonClicked', function(){
-      tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
+   tg.MainButton.onClick(() => {
+     // tg.sendData('/ping');
+     alert('tg.MainButton.onClick()');
+   });
+
+   //Telegram.WebApp.onEvent('mainButtonClicked', function(){
+      //tg.MainButton.setParams({"color": "yellow"}); //меняем цвет
       //tg.sendData("some string that we need to send");
       //при клике на основную кнопку отправляем данные в строковом виде
-   });
-
-   tg.MainButton.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-     alert(JSON.stringify(tg.MainButton));
-   });
-
-
-
-
+   //});
 
    //работает только в attachment menu
    //let pic = document.createElement('img'); //создаем img
